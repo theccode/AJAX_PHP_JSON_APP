@@ -1,9 +1,18 @@
 [
     {
-        "productName": "Pro0",
-        "quantityInStock": "3",
-        "pricePerItem": 2,
-        "dateSubmitted": "11th July 2020",
-        "totalValueNumber": 6
+        "id": "kd84bpwy",
+        "productName": "Ps1",
+        "quantityInStock": "2",
+        "pricePerItem": 10.5,
+        "dateSubmitted": "30th July 2020",
+        "totalValueNumber": 21
+    },
+    {
+        "id": "kd84c30e",
+        "productName": "Ps2",
+        "quantityInStock": "8",
+        "pricePerItem": 20,
+        "dateSubmitted": "30th July 2020",
+        "totalValueNumber": 160
     }
 ]

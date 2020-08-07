@@ -3,59 +3,61 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./assets/css/App.css" />
-		<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+		<link rel="stylesheet" href="/public/assets/css/App.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 		<title>Product Table</title>
-		<style>
-			
-		</style>
+
 	</head>
 	<body>
 		<div id="wrapper">
-			<div id="form">
+			<div>Enter product details below: </div>
+			<div id="forms">
 				<fieldset>
 					<legend>Product Details</legend>
 					<form id="form">
 						<div class="form-group">
-							<label for="Product Name:">Product Name:</label><br />
-							<input type="text" id="productName" placeholder="Product Name" autofocus />
+							<label for="Name">Product Name:</label><br />
+							<input type="text" id="productName" placeholder="Product Name" autofocus required />
 						</div>
 						<div class="form-group">
-							<label for="Quantity:">Quantity In Stock:</label><br />
+							<label for="Quantity">Quantity In Stock:</label><br />
 							<input type="text" id="quantityInStock" placeholder="Quantity In Stock" required />
 						</div>
 						<div class="form-group">
-							<label for="Price:">Price Per Item:</label><br />
+							<label for="Price">Price Per Item:</label><br />
 							<input type="text" id="pricePerItem" placeholder="Price Per Item" required />
 						</div>
 
 						<div class="form-group">
-							<input type="submit" id="submit" value="Save" />
+							<input type="hidden" id="hidden" value="">
+							<input type="submit" id="clear" class="submit" value="Refresh" />
+							<input type="submit" id= "submit" class="submit" value="Save" />
 						</div>
 					</fieldset>
 				</form>
 
 			</div>
 			<hr />
-			<div id="table">
-				<table id="productDetails">
+			<div id="table" >
+				<table id="productDetails" class="sortable">
 					<thead>
 						<tr>
-							<th>Product Name</th>
-							<th>Quantity In Stock</th>
-							<th>Price Per Item</th>
-							<th>Date Submitted</th>
-							<th>Total Value</th>
+							<th data-sort="name">Product Name</th>
+							<th data-sort="quantity">Quantity In Stock</th>
+							<th data-sort="price">Price Per Item</th>
+							<th data-sort="date">Date Submitted</th>
+							<th data-sort="total">Total Value</th>
 						</tr>
 					</thead>
 					<tbody>
-						
+
 					</tbody>
 				</table>
 			</div>
+			<div class="response"><span id="result-bg"></span><span id="result"></span></div>
 		</div>
-		
-		<script src="js/jquery-1.12.4.min.js"></script>
-		<script src="js/App.js"></script>
+		<script src="/public/js/jquery-1.12.4.min.js"></script>
+		<script src="/public/js/App.js"></script>
+<!--		<script src="/public/js/sort.js"></script>-->
 	</body>
 </html>

@@ -1,31 +1,17 @@
 <?php
-$productName = $_POST['productName'];
-$quantityInStock = $_POST['quantityInStock'];
-$pricePerItem = $_POST['pricePerItem'];
-$totalValueNumber = $quantityInStock * $pricePerItem;
-$recUpdated = null;
+    include __DIR__.'/../Loader/autoloader.php';
 
-if (!empty($productName) && !empty($quantityInStock) && !empty($pricePerItem)){
+    //create a product
+    $product = new Product($_POST['productId'], $_POST['productName'], $_POST['quantityInStock'], $_POST['pricePerItem'], $_POST['cmd']);
+    //check on action to perform.
+    $func = $_POST['action'];
+    if ($func){
+        switch ($func){
+            case 'saveProduct': $product->save(); break;
+            case 'getProduct': $product->read(); break;
+            case 'removeProduct': $product->remove(); break;
+            default: echo json_encode('Please Select An Operation To Perform'); break;
+        }
+    }
 
-     $data = [];
-     $date = new DateTime();
-     $productDescription = [
-          'productName'=>$productName, 
-          'quantityInStock'=>$quantityInStock, 
-          'pricePerItem'=>floatval($pricePerItem),
-          'dateSubmitted' => $date->format('jS F Y'),
-          'totalValueNumber' => $totalValueNumber
-     ];
 
-     $dataFile = __DIR__ . '/../Data/product.json';
-     $jsonData = file_get_contents($dataFile);
-     $data = json_decode($jsonData);
-     array_push($data, $productDescription);
-     $data = array( json_encode($data, JSON_PRETTY_PRINT));
-     file_put_contents($dataFile, $data);
-
-     $recUpdated = file_get_contents($dataFile);
-} 
-if ($jsonData != null){
-     echo $recUpdated;
-}
