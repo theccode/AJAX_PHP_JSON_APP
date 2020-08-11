@@ -14,5 +14,13 @@
         "pricePerItem": 20,
         "dateSubmitted": "30th July 2020",
         "totalValueNumber": 160
+    },
+    {
+        "id": "kdpsy9r6",
+        "productName": "Ps3",
+        "quantityInStock": "18",
+        "pricePerItem": 4,
+        "dateSubmitted": "11th August 2020",
+        "totalValueNumber": 72
     }
 ]
